@@ -48,7 +48,7 @@ abstract class CallExpression extends AbstractExpression
 
                 $compiler->raw(sprintf('->%s', $callable[1]));
             } else {
-                $compiler->raw(sprintf('$this->env->get%s(\'%s\')->getCallable()', ucfirst($this->getAttribute('type')), $this->getAttribute('name')));
+                $compiler->raw(sprintf('$this->env->get%s(\'%s\')->getCallable()', ucfirst($this->getAttribute('type')), $this->getAttribute('titre')));
             }
         }
 
@@ -110,7 +110,7 @@ abstract class CallExpression extends AbstractExpression
     protected function getArguments($callable, $arguments)
     {
         $callType = $this->getAttribute('type');
-        $callName = $this->getAttribute('name');
+        $callName = $this->getAttribute('titre');
 
         $parameters = [];
         $named = false;
@@ -266,7 +266,7 @@ abstract class CallExpression extends AbstractExpression
                 array_pop($parameters);
                 $isPhpVariadic = true;
             } else {
-                throw new \LogicException(sprintf('The last parameter of "%s" for %s "%s" must be an array with default value, eg. "array $arg = []".', $callableName, $this->getAttribute('type'), $this->getAttribute('name')));
+                throw new \LogicException(sprintf('The last parameter of "%s" for %s "%s" must be an array with default value, eg. "array $arg = []".', $callableName, $this->getAttribute('type'), $this->getAttribute('titre')));
             }
         }
 
@@ -293,7 +293,7 @@ abstract class CallExpression extends AbstractExpression
         try {
             $closure = \Closure::fromCallable($callable);
         } catch (\TypeError $e) {
-            throw new \LogicException(sprintf('Callback for %s "%s" is not callable in the current scope.', $this->getAttribute('type'), $this->getAttribute('name')), 0, $e);
+            throw new \LogicException(sprintf('Callback for %s "%s" is not callable in the current scope.', $this->getAttribute('type'), $this->getAttribute('titre')), 0, $e);
         }
         $r = new \ReflectionFunction($closure);
 

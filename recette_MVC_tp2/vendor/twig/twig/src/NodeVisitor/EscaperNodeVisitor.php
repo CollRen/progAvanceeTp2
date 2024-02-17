@@ -57,9 +57,9 @@ final class EscaperNodeVisitor implements NodeVisitorInterface
         } elseif ($node instanceof AutoEscapeNode) {
             $this->statusStack[] = $node->getAttribute('value');
         } elseif ($node instanceof BlockNode) {
-            $this->statusStack[] = $this->blocks[$node->getAttribute('name')] ?? $this->needEscaping();
+            $this->statusStack[] = $this->blocks[$node->getAttribute('titre')] ?? $this->needEscaping();
         } elseif ($node instanceof ImportNode) {
-            $this->safeVars[] = $node->getNode('var')->getAttribute('name');
+            $this->safeVars[] = $node->getNode('var')->getAttribute('titre');
         }
 
         return $node;
@@ -85,7 +85,7 @@ final class EscaperNodeVisitor implements NodeVisitorInterface
         if ($node instanceof AutoEscapeNode || $node instanceof BlockNode) {
             array_pop($this->statusStack);
         } elseif ($node instanceof BlockReferenceNode) {
-            $this->blocks[$node->getAttribute('name')] = $this->needEscaping();
+            $this->blocks[$node->getAttribute('titre')] = $this->needEscaping();
         }
 
         return $node;

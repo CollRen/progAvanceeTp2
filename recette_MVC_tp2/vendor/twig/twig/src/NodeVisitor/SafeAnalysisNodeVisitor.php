@@ -109,7 +109,7 @@ final class SafeAnalysisNodeVisitor implements NodeVisitorInterface
             }
         } elseif ($node instanceof FunctionExpression) {
             // function expression is safe when the function is safe
-            $name = $node->getAttribute('name');
+            $name = $node->getAttribute('titre');
             $args = $node->getNode('arguments');
             if ($function = $env->getFunction($name)) {
                 $this->setSafe($node, $function->getSafe($args));
@@ -123,7 +123,7 @@ final class SafeAnalysisNodeVisitor implements NodeVisitorInterface
                 $this->setSafe($node, []);
             }
         } elseif ($node instanceof GetAttrExpression && $node->getNode('node') instanceof NameExpression) {
-            $name = $node->getNode('node')->getAttribute('name');
+            $name = $node->getNode('node')->getAttribute('titre');
             if (\in_array($name, $this->safeVars)) {
                 $this->setSafe($node, ['all']);
             } else {

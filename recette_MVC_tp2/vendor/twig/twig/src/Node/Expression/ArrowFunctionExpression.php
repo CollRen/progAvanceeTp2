@@ -39,7 +39,7 @@ class ArrowFunctionExpression extends AbstractExpression
 
             $compiler
                 ->raw('$__')
-                ->raw($name->getAttribute('name'))
+                ->raw($name->getAttribute('titre'))
                 ->raw('__')
             ;
         }
@@ -49,9 +49,9 @@ class ArrowFunctionExpression extends AbstractExpression
         foreach ($this->getNode('names') as $name) {
             $compiler
                 ->raw('$context["')
-                ->raw($name->getAttribute('name'))
+                ->raw($name->getAttribute('titre'))
                 ->raw('"] = $__')
-                ->raw($name->getAttribute('name'))
+                ->raw($name->getAttribute('titre'))
                 ->raw('__; ')
             ;
         }

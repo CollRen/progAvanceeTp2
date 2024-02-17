@@ -50,13 +50,13 @@ final class ForTokenParser extends AbstractTokenParser
 
         if (\count($targets) > 1) {
             $keyTarget = $targets->getNode(0);
-            $keyTarget = new AssignNameExpression($keyTarget->getAttribute('name'), $keyTarget->getTemplateLine());
+            $keyTarget = new AssignNameExpression($keyTarget->getAttribute('titre'), $keyTarget->getTemplateLine());
             $valueTarget = $targets->getNode(1);
         } else {
             $keyTarget = new AssignNameExpression('_key', $lineno);
             $valueTarget = $targets->getNode(0);
         }
-        $valueTarget = new AssignNameExpression($valueTarget->getAttribute('name'), $valueTarget->getTemplateLine());
+        $valueTarget = new AssignNameExpression($valueTarget->getAttribute('titre'), $valueTarget->getTemplateLine());
 
         return new ForNode($keyTarget, $valueTarget, $seq, null, $body, $else, $lineno, $this->getTag());
     }

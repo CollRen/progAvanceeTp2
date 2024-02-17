@@ -24,12 +24,12 @@ class NameExpression extends AbstractExpression
 
     public function __construct(string $name, int $lineno)
     {
-        parent::__construct([], ['name' => $name, 'is_defined_test' => false, 'ignore_strict_check' => false, 'always_defined' => false], $lineno);
+        parent::__construct([], ['titre' => $name, 'is_defined_test' => false, 'ignore_strict_check' => false, 'always_defined' => false], $lineno);
     }
 
     public function compile(Compiler $compiler): void
     {
-        $name = $this->getAttribute('name');
+        $name = $this->getAttribute('titre');
 
         $compiler->addDebugInfo($this);
 
@@ -87,7 +87,7 @@ class NameExpression extends AbstractExpression
 
     public function isSpecial()
     {
-        return isset($this->specialVars[$this->getAttribute('name')]);
+        return isset($this->specialVars[$this->getAttribute('titre')]);
     }
 
     public function isSimple()

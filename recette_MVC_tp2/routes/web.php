@@ -7,19 +7,19 @@ Route::get('/home', 'HomeController@home');
 
 
 /**
- * Route SHOW CLIENT
+ * Route SHOW RECETTE
  */
-Route::get('/client', 'ClientController@index');
-Route::get('/client/show', 'ClientController@show');
+Route::get('/recette', 'RecetteController@index');
+Route::get('/recette/show', 'RecetteController@show');
 
 /**
- * ROUTE CLIENT controller
+ * ROUTE RECETTE controller
  */
-Route::get('/client/create', 'ClientController@create');
-Route::post('/client/create', 'ClientController@store');
-Route::get('/client/edit', 'ClientController@edit');
-Route::post('/client/edit', 'ClientController@update');
-Route::post('/client/delete', 'ClientController@delete');
+Route::get('/recette/create', 'RecetteController@create');
+Route::post('/recette/create', 'RecetteController@store');
+Route::get('/recette/edit', 'RecetteController@edit');
+Route::post('/recette/edit', 'RecetteController@update');
+Route::post('/recette/delete', 'RecetteController@delete');
 
 
 

@@ -65,7 +65,7 @@ final class EscaperExtension extends AbstractExtension
      */
     public function setDefaultStrategy($defaultStrategy): void
     {
-        if ('name' === $defaultStrategy) {
+        if ('titre' === $defaultStrategy) {
             $defaultStrategy = [FileExtensionEscapingStrategy::class, 'guess'];
         }
 

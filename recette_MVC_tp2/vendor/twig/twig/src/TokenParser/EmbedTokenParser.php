@@ -36,7 +36,7 @@ final class EmbedTokenParser extends IncludeTokenParser
         if ($parent instanceof ConstantExpression) {
             $parentToken = new Token(/* Token::STRING_TYPE */ 7, $parent->getAttribute('value'), $token->getLine());
         } elseif ($parent instanceof NameExpression) {
-            $parentToken = new Token(/* Token::NAME_TYPE */ 5, $parent->getAttribute('name'), $token->getLine());
+            $parentToken = new Token(/* Token::NAME_TYPE */ 5, $parent->getAttribute('titre'), $token->getLine());
         }
 
         // inject a fake parent to make the parent() function work

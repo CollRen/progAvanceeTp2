@@ -467,7 +467,7 @@ class ExpressionParser
                         $arguments->addElement($n);
                     }
 
-                    $node = new MethodCallExpression($alias['node'], $alias['name'], $arguments, $line);
+                    $node = new MethodCallExpression($alias['node'], $alias['titre'], $arguments, $line);
                     $node->setAttribute('safe', true);
 
                     return $node;
@@ -508,7 +508,7 @@ class ExpressionParser
                 throw new SyntaxError(sprintf('Expected name or number, got value "%s" of type %s.', $token->getValue(), Token::typeToEnglish($token->getType())), $lineno, $stream->getSourceContext());
             }
 
-            if ($node instanceof NameExpression && null !== $this->parser->getImportedSymbol('template', $node->getAttribute('name'))) {
+            if ($node instanceof NameExpression && null !== $this->parser->getImportedSymbol('template', $node->getAttribute('titre'))) {
                 $name = $arg->getAttribute('value');
 
                 $node = new MethodCallExpression($node, 'macro_'.$name, $arguments, $lineno);
@@ -625,7 +625,7 @@ class ExpressionParser
                 if (!$value instanceof NameExpression) {
                     throw new SyntaxError(sprintf('A parameter name must be a string, "%s" given.', \get_class($value)), $token->getLine(), $stream->getSourceContext());
                 }
-                $name = $value->getAttribute('name');
+                $name = $value->getAttribute('titre');
 
                 if ($definition) {
                     $value = $this->parsePrimaryExpression();
@@ -640,7 +640,7 @@ class ExpressionParser
 
             if ($definition) {
                 if (null === $name) {
-                    $name = $value->getAttribute('name');
+                    $name = $value->getAttribute('titre');
                     $value = new ConstantExpression(null, $this->parser->getCurrentToken()->getLine());
                 }
                 $args[$name] = $value;
@@ -714,8 +714,8 @@ class ExpressionParser
             $arguments = new Node([0 => $this->parsePrimaryExpression()]);
         }
 
-        if ('defined' === $name && $node instanceof NameExpression && null !== $alias = $this->parser->getImportedSymbol('function', $node->getAttribute('name'))) {
-            $node = new MethodCallExpression($alias['node'], $alias['name'], new ArrayExpression([], $node->getTemplateLine()), $node->getTemplateLine());
+        if ('defined' === $name && $node instanceof NameExpression && null !== $alias = $this->parser->getImportedSymbol('function', $node->getAttribute('titre'))) {
+            $node = new MethodCallExpression($alias['node'], $alias['titre'], new ArrayExpression([], $node->getTemplateLine()), $node->getTemplateLine());
             $node->setAttribute('safe', true);
         }
 

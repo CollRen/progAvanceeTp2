@@ -23,7 +23,7 @@ class EnterProfileNode extends Node
 {
     public function __construct(string $extensionName, string $type, string $name, string $varName)
     {
-        parent::__construct([], ['extension_name' => $extensionName, 'name' => $name, 'type' => $type, 'var_name' => $varName]);
+        parent::__construct([], ['extension_name' => $extensionName, 'titre' => $name, 'type' => $type, 'var_name' => $varName]);
     }
 
     public function compile(Compiler $compiler): void
@@ -35,7 +35,7 @@ class EnterProfileNode extends Node
             ->write(sprintf('$%s->enter($%s = new \Twig\Profiler\Profile($this->getTemplateName(), ', $this->getAttribute('var_name'), $this->getAttribute('var_name').'_prof'))
             ->repr($this->getAttribute('type'))
             ->raw(', ')
-            ->repr($this->getAttribute('name'))
+            ->repr($this->getAttribute('titre'))
             ->raw("));\n\n")
         ;
     }

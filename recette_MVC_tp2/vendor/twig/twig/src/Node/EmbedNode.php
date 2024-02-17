@@ -27,7 +27,7 @@ class EmbedNode extends IncludeNode
     {
         parent::__construct(new ConstantExpression('not_used', $lineno), $variables, $only, $ignoreMissing, $lineno, $tag);
 
-        $this->setAttribute('name', $name);
+        $this->setAttribute('titre', $name);
         $this->setAttribute('index', $index);
     }
 
@@ -35,7 +35,7 @@ class EmbedNode extends IncludeNode
     {
         $compiler
             ->write('$this->loadTemplate(')
-            ->string($this->getAttribute('name'))
+            ->string($this->getAttribute('titre'))
             ->raw(', ')
             ->repr($this->getTemplateName())
             ->raw(', ')

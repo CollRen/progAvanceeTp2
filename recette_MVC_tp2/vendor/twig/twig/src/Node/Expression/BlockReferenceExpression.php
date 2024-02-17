@@ -24,7 +24,7 @@ class BlockReferenceExpression extends AbstractExpression
 {
     public function __construct(Node $name, ?Node $template, int $lineno, string $tag = null)
     {
-        $nodes = ['name' => $name];
+        $nodes = ['titre' => $name];
         if (null !== $template) {
             $nodes['template'] = $template;
         }
@@ -74,7 +74,7 @@ class BlockReferenceExpression extends AbstractExpression
     {
         $compiler
             ->raw('(')
-            ->subcompile($this->getNode('name'))
+            ->subcompile($this->getNode('titre'))
             ->raw(', $context');
 
         if (!$this->hasNode('template')) {

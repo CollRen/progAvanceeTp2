@@ -160,7 +160,7 @@ final class Token
             case self::VAR_END_TYPE:
                 return 'end of print statement';
             case self::NAME_TYPE:
-                return 'name';
+                return 'titre';
             case self::NUMBER_TYPE:
                 return 'number';
             case self::STRING_TYPE:

@@ -18,15 +18,15 @@ class FunctionExpression extends CallExpression
 {
     public function __construct(string $name, Node $arguments, int $lineno)
     {
-        parent::__construct(['arguments' => $arguments], ['name' => $name, 'is_defined_test' => false], $lineno);
+        parent::__construct(['arguments' => $arguments], ['titre' => $name, 'is_defined_test' => false], $lineno);
     }
 
     public function compile(Compiler $compiler)
     {
-        $name = $this->getAttribute('name');
+        $name = $this->getAttribute('titre');
         $function = $compiler->getEnvironment()->getFunction($name);
 
-        $this->setAttribute('name', $name);
+        $this->setAttribute('titre', $name);
         $this->setAttribute('type', 'function');
         $this->setAttribute('needs_environment', $function->needsEnvironment());
         $this->setAttribute('needs_context', $function->needsContext());

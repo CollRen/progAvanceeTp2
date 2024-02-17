@@ -131,8 +131,8 @@ final class OptimizerNodeVisitor implements NodeVisitorInterface
             // disable the loop variable by default
             $node->setAttribute('with_loop', false);
             array_unshift($this->loops, $node);
-            array_unshift($this->loopsTargets, $node->getNode('value_target')->getAttribute('name'));
-            array_unshift($this->loopsTargets, $node->getNode('key_target')->getAttribute('name'));
+            array_unshift($this->loopsTargets, $node->getNode('value_target')->getAttribute('titre'));
+            array_unshift($this->loopsTargets, $node->getNode('key_target')->getAttribute('titre'));
         } elseif (!$this->loops) {
             // we are outside a loop
             return;
@@ -141,13 +141,13 @@ final class OptimizerNodeVisitor implements NodeVisitorInterface
         // when do we need to add the loop variable back?
 
         // the loop variable is referenced for the current loop
-        elseif ($node instanceof NameExpression && 'loop' === $node->getAttribute('name')) {
+        elseif ($node instanceof NameExpression && 'loop' === $node->getAttribute('titre')) {
             $node->setAttribute('always_defined', true);
             $this->addLoopToCurrent();
         }
 
         // optimize access to loop targets
-        elseif ($node instanceof NameExpression && \in_array($node->getAttribute('name'), $this->loopsTargets)) {
+        elseif ($node instanceof NameExpression && \in_array($node->getAttribute('titre'), $this->loopsTargets)) {
             $node->setAttribute('always_defined', true);
         }
 
@@ -163,7 +163,7 @@ final class OptimizerNodeVisitor implements NodeVisitorInterface
 
         // include function without the with_context=false parameter
         elseif ($node instanceof FunctionExpression
-            && 'include' === $node->getAttribute('name')
+            && 'include' === $node->getAttribute('titre')
             && (!$node->getNode('arguments')->hasNode('with_context')
                  || false !== $node->getNode('arguments')->getNode('with_context')->getAttribute('value')
             )
@@ -178,7 +178,7 @@ final class OptimizerNodeVisitor implements NodeVisitorInterface
             )
             && (true === $this->loops[0]->getAttribute('with_loop')
              || ($node->getNode('node') instanceof NameExpression
-                 && 'loop' === $node->getNode('node')->getAttribute('name')
+                 && 'loop' === $node->getNode('node')->getAttribute('titre')
              )
             )
         ) {

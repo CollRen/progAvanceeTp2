@@ -32,19 +32,19 @@ class ImportNode extends Node
         $compiler
             ->addDebugInfo($this)
             ->write('$macros[')
-            ->repr($this->getNode('var')->getAttribute('name'))
+            ->repr($this->getNode('var')->getAttribute('titre'))
             ->raw('] = ')
         ;
 
         if ($this->getAttribute('global')) {
             $compiler
                 ->raw('$this->macros[')
-                ->repr($this->getNode('var')->getAttribute('name'))
+                ->repr($this->getNode('var')->getAttribute('titre'))
                 ->raw('] = ')
             ;
         }
 
-        if ($this->getNode('expr') instanceof NameExpression && '_self' === $this->getNode('expr')->getAttribute('name')) {
+        if ($this->getNode('expr') instanceof NameExpression && '_self' === $this->getNode('expr')->getAttribute('titre')) {
             $compiler->raw('$this');
         } else {
             $compiler

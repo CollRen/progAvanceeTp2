@@ -44,7 +44,7 @@ class DefinedTest extends TestExpression
             $this->changeIgnoreStrictCheck($node);
         } elseif ($node instanceof BlockReferenceExpression) {
             $node->setAttribute('is_defined_test', true);
-        } elseif ($node instanceof FunctionExpression && 'constant' === $node->getAttribute('name')) {
+        } elseif ($node instanceof FunctionExpression && 'constant' === $node->getAttribute('titre')) {
             $node->setAttribute('is_defined_test', true);
         } elseif ($node instanceof ConstantExpression || $node instanceof ArrayExpression) {
             $node = new ConstantExpression(true, $node->getTemplateLine());

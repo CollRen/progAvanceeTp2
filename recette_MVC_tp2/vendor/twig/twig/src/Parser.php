@@ -249,7 +249,7 @@ class Parser
 
     public function addImportedSymbol(string $type, string $alias, string $name = null, AbstractExpression $node = null): void
     {
-        $this->importedSymbols[0][$type][$alias] = ['name' => $name, 'node' => $node];
+        $this->importedSymbols[0][$type][$alias] = ['titre' => $name, 'node' => $node];
     }
 
     public function getImportedSymbol(string $type, string $alias)

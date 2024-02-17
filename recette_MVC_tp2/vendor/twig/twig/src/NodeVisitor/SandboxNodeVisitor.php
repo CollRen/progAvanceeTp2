@@ -60,8 +60,8 @@ final class SandboxNodeVisitor implements NodeVisitorInterface
             }
 
             // look for functions
-            if ($node instanceof FunctionExpression && !isset($this->functions[$node->getAttribute('name')])) {
-                $this->functions[$node->getAttribute('name')] = $node;
+            if ($node instanceof FunctionExpression && !isset($this->functions[$node->getAttribute('titre')])) {
+                $this->functions[$node->getAttribute('titre')] = $node;
             }
 
             // the .. operator is equivalent to the range() function

@@ -1,20 +1,20 @@
 <?php
 namespace App\Controllers;
 
-use App\Models\Tester;
+use App\Models\Recette;
 use App\Providers\View;
 use App\Providers\Validator;
 
 
-class TesterController {
+class RecetteController {
 
     public function index(){
-        $tester = new Tester;
-        $select = $tester->select();
+        $recette = new Recette;
+        $select = $recette->select();
         //print_r($select);
-        //include('views/tester/index.php');
+        //include('views/recette/index.php');
         if($select){
-            return View::render('tester/index', ['testers' => $select]);
+            return View::render('recette/index', ['recettes' => $select]);
         }else{
             return View::render('error');
         }    
@@ -22,10 +22,10 @@ class TesterController {
 
     public function show($data = []){
         if(isset($data['id']) && $data['id']!=null){
-            $tester = new Tester;
-            $selectId = $tester->selectId($data['id']);
+            $recette = new Recette;
+            $selectId = $recette->selectId($data['id']);
             if($selectId){
-                return View::render('tester/show', ['tester' => $selectId]);
+                return View::render('recette/show', ['recette' => $selectId]);
             }else{
                 return View::render('error');
             }
@@ -35,7 +35,7 @@ class TesterController {
     }
 
     public function create(){
-        return View::render('tester/create');
+        return View::render('recette/create');
     }
 
     public function store($data){
@@ -48,26 +48,26 @@ class TesterController {
         
 
         if($validator->isSuccess()){
-            $tester = new Tester;
-            $insert = $tester->insert($data);        
+            $recette = new Recette;
+            $insert = $recette->insert($data);        
             if($insert){
-                return View::redirect('tester');
+                return View::redirect('recette');
             }else{
                 return View::render('error');
             }
         }else{
             $errors = $validator->getErrors();
             //print_r($errors);
-            return View::render('tester/create', ['errors'=>$errors, 'tester' => $data]);
+            return View::render('recette/create', ['errors'=>$errors, 'recette' => $data]);
         }
     }
 
     public function edit($data = []){
         if(isset($data['id']) && $data['id']!=null){
-            $tester = new Tester;
-            $selectId = $tester->selectId($data['id']);
+            $recette = new Recette;
+            $selectId = $recette->selectId($data['id']);
             if($selectId){
-                return View::render('tester/edit', ['tester' => $selectId]);
+                return View::render('recette/edit', ['recette' => $selectId]);
             }else{
                 return View::render('error');
             }
@@ -85,26 +85,26 @@ class TesterController {
         
 
         if($validator->isSuccess()){
-                $tester = new Tester;
-                $update = $tester->update($data, $get['id']);
+                $recette = new Recette;
+                $update = $recette->update($data, $get['id']);
 
                 if($update){
-                    return View::redirect('tester/show?id='.$get['id']);
+                    return View::redirect('recette/show?id='.$get['id']);
                 }else{
                     return View::render('error');
                 }
         }else{
             $errors = $validator->getErrors();
             //print_r($errors);
-            return View::render('tester/edit', ['errors'=>$errors, 'tester' => $data]);
+            return View::render('recette/edit', ['errors'=>$errors, 'recette' => $data]);
         }
     }
 
     public function delete($data){
-        $tester = new  Tester;
-        $delete = $tester->delete($data['id']);
+        $recette = new  Recette;
+        $delete = $recette->delete($data['id']);
         if($delete){
-            return View::redirect('tester');
+            return View::redirect('recette');
         }else{
             return View::render('error');
         }
