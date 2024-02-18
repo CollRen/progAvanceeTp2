@@ -43,7 +43,15 @@ Route::post('/categorie/edit', 'CategorieController@update');
 Route::post('/categorie/delete', 'CategorieController@delete');
 
 
+Route::get('/umesure', 'UmesureController@index');
+Route::get('/umesure/show', 'UmesureController@show');
 
+Route::get('/umesure/create', 'UmesureController@create');
+Route::post('/umesure/create', 'UmesureController@store');
+
+Route::get('/umesure/edit', 'UmesureController@edit');
+Route::post('/umesure/edit', 'UmesureController@update');
+Route::post('/umesure/delete', 'UmesureController@delete');
 
 
 Route::get('/tester', 'TesterController@index');
