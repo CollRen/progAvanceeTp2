@@ -54,6 +54,19 @@ Route::post('/umesure/edit', 'UmesureController@update');
 Route::post('/umesure/delete', 'UmesureController@delete');
 
 
+
+Route::get('/ingredientcat', 'IngredientcatController@index');
+Route::get('/ingredientcat/show', 'IngredientcatController@show');
+
+Route::get('/ingredientcat/create', 'IngredientcatController@create');
+Route::post('/ingredientcat/create', 'IngredientcatController@store');
+
+Route::get('/ingredientcat/edit', 'IngredientcatController@edit');
+Route::post('/ingredientcat/edit', 'IngredientcatController@update');
+Route::post('/ingredientcat/delete', 'IngredientcatController@delete');
+
+
+
 Route::get('/tester', 'TesterController@index');
 Route::get('/tester/show', 'TesterController@show');
 
