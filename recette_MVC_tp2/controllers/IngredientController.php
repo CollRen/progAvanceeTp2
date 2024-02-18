@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\Ingredient;
+use App\Models\Ingredientcat;
 use App\Providers\View;
 use App\Providers\Validator;
 
@@ -11,10 +12,12 @@ class ingredientController {
     public function index(){
         $ingredient = new Ingredient;
         $select = $ingredient->select();
-        //print_r($select);
-        //include('views/ingredient/index.php');
-        if($select){
-            return View::render('ingredient/index', ['ingredients' => $select]);
+
+        $ingredientcat = new Ingredientcat;
+        $selectCat = $ingredientcat->select();
+        
+        if($select && $selectCat){
+            return View::render('ingredient/index', ['ingredients' => $select, 'ingredientcats' => $selectCat]);
         }else{
             return View::render('error');
         }    

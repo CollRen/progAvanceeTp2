@@ -11,12 +11,10 @@
         <ul>
             <li><a href="{{base}}/recette">Recette</a></li>
             <li><a href="{{base}}/recette/create">Create</a></li>
-            <li><a href="{{base}}/auteur">Auteurs</a></li>
-            <li><a href="{{base}}/auteur/create">Ajouter un auteur</a></li>
-            <li><a href="{{base}}/ingredientcat">Cat. Ingrédient</a></li>
-            <li><a href="{{base}}/ingredientcat/create">Créer catégorie ingrédient</a></li>
-            <li><a href="{{base}}/ingredient">Ingredient</a></li>
-            <li><a href="{{base}}/ingredient/create">Create</a></li>
+            <li><a href="{{base}}/ingredientcat">index Ingrédientcat</a></li>
+            <li><a href="{{base}}/ingredientcat/create">Créer catingrédient</a></li>
+            <li><a href="{{base}}/ingredient">index Ingredient</a></li>
+            <li><a href="{{base}}/ingredient/create">Créer ingredient</a></li>
             <li><a href="">Users</a></li>
             <li><a href="">Login</a></li>
         </ul>

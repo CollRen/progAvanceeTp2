@@ -16,4 +16,5 @@
         {% endfor %}
         </tbody>
     </table>
+    
     <a href="{{ base }}/ingredientcat/create" class="btn" >Ingredientcat Create</a>
