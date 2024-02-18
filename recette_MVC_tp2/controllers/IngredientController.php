@@ -38,13 +38,16 @@ class ingredientController {
     }
 
     public function create(){
-        return View::render('ingredient/create');
+
+        $ingredientcat = new Ingredientcat;
+        $selectCat = $ingredientcat->select();
+        return View::render('ingredient/create', ['ingredientcats' => $selectCat]);
     }
 
     public function store($data){
-        
         $validator = new Validator;
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
+        //$validator->field('ingredient_categorie', $data['ingredient_categorie'], 'Le id de la catégorie')->min(1);
 
         if($validator->isSuccess()){
             $ingredient = new Ingredient;
