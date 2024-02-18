@@ -9,12 +9,8 @@
 <body>
     <nav>
         <ul>
-            <li><a href="{{base}}/recette">Recette</a></li>
-            <li><a href="{{base}}/recette/create">Create</a></li>
-            <li><a href="{{base}}/auteur">Auteurs</a></li>
-            <li><a href="{{base}}/auteur/create">Ajouter un auteur</a></li>
-            <li><a href="{{base}}/tester">Tester</a></li>
-            <li><a href="{{base}}/tester/create">Create Tester</a></li>
+            <li><a href="{{base}}/client">Client</a></li>
+            <li><a href="{{base}}/client/create">Create</a></li>
             <li><a href="">Users</a></li>
             <li><a href="">Login</a></li>
         </ul>

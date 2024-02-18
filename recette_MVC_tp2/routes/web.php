@@ -22,6 +22,22 @@ Route::post('/recette/edit', 'RecetteController@update');
 Route::post('/recette/delete', 'RecetteController@delete');
 
 
+/**
+ * Route SHOW AUTEUR
+ */
+Route::get('/auteur', 'AuteurController@index');
+Route::get('/auteur/show', 'AuteurController@show');
+
+/**
+ * ROUTE AUTEUR controller
+ */
+Route::get('/auteur/create', 'AuteurController@create');
+Route::post('/auteur/create', 'AuteurController@store');
+Route::get('/auteur/edit', 'AuteurController@edit');
+Route::post('/auteur/edit', 'AuteurController@update');
+Route::post('/auteur/delete', 'AuteurController@delete');
+
+
 
 
 

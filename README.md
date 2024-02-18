@@ -12,3 +12,4 @@
     - Attention à la CASE recette VS recettes VS Recette
 
 5. /layout/footer et header pour ajouter cet instance au menu au besoin
+6. /views/[nom_instance_entité]/index.php -> changer ce qu'il faut changer
