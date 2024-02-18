@@ -12,12 +12,12 @@
 
             <select name="ingredient_categorie_id" id="">
 
-                {% for ingredientcat in ingredientcats %}
+{% for ingredientcat in ingredientcats %}
 
-                    <option value="{{ ingredientcat.id }}">{{ ingredientcat.nom }}</option>
-            
-                {% endfor %}
-            </select>
+    <option value="{{ ingredientcat.id }}">{{ ingredientcat.nom }}</option>
+
+{% endfor %}
+</select>
            
             <input type="submit" class="btn" value="Save">
         </form>
