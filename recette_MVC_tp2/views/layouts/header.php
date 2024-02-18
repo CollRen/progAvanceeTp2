@@ -13,8 +13,8 @@
             <li><a href="{{base}}/recette/create">Create</a></li>
             <li><a href="{{base}}/auteur">Auteurs</a></li>
             <li><a href="{{base}}/auteur/create">Ajouter un auteur</a></li>
-            <li><a href="{{base}}/tester">Tester</a></li>
-            <li><a href="{{base}}/tester/create">Create Tester</a></li>
+            <li><a href="{{base}}/categorie">Catégorie</a></li>
+            <li><a href="{{base}}/categorie/create">Catégorie</a></li>
             <li><a href="">Users</a></li>
             <li><a href="">Login</a></li>
         </ul>
