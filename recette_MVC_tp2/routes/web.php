@@ -67,6 +67,18 @@ Route::post('/ingredientcat/delete', 'IngredientcatController@delete');
 
 
 
+Route::get('/ingredient', 'ingredientController@index');
+Route::get('/ingredient/show', 'ingredientController@show');
+
+Route::get('/ingredient/create', 'ingredientController@create');
+Route::post('/ingredient/create', 'ingredientController@store');
+
+Route::get('/ingredient/edit', 'ingredientController@edit');
+Route::post('/ingredient/edit', 'ingredientController@update');
+Route::post('/ingredient/delete', 'ingredientController@delete');
+
+
+
 Route::get('/tester', 'TesterController@index');
 Route::get('/tester/show', 'TesterController@show');
 
