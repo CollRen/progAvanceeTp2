@@ -3,6 +3,7 @@
         <h2>Ingredient Show</h2>
         <hr>
         <p><strong>Nom:</strong> {{ ingredient.nom }}</p>
+        <p><strong>Catégorie:</strong> {{ ingredient.nom }}</p>
 
         <a href="{{base}}/ingredient/edit?id={{ingredient.id}}" class="btn block">Edit</a>
         <form action="{{base}}/ingredient/delete" method="post">
