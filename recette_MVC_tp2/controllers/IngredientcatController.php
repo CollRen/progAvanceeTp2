@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-use App\Models\Ingredientcat;
+use App\Models\IngredientCat;
 use App\Providers\View;
 use App\Providers\Validator;
 
@@ -9,7 +9,7 @@ use App\Providers\Validator;
 class IngredientCatController {
 
     public function index(){
-        $ingredientcat = new Ingredientcat;
+        $ingredientcat = new IngredientCat;
         $select = $ingredientcat->select();
         //print_r($select);
         //include('views/ingredientcat/index.php');
@@ -22,7 +22,7 @@ class IngredientCatController {
 
     public function show($data = []){
         if(isset($data['id']) && $data['id']!=null){
-            $ingredientcat = new Ingredientcat;
+            $ingredientcat = new IngredientCat;
             $selectId = $ingredientcat->selectId($data['id']);
             if($selectId){
                 return View::render('ingredientcat/show', ['ingredientcat' => $selectId]);
@@ -44,7 +44,7 @@ class IngredientCatController {
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
 
         if($validator->isSuccess()){
-            $ingredientcat = new Ingredientcat;
+            $ingredientcat = new IngredientCat;
             $insert = $ingredientcat->insert($data);        
             if($insert){
                 return View::redirect('ingredientcat');
@@ -60,7 +60,7 @@ class IngredientCatController {
 
     public function edit($data = []){
         if(isset($data['id']) && $data['id']!=null){
-            $ingredientcat = new Ingredientcat;
+            $ingredientcat = new IngredientCat;
             $selectId = $ingredientcat->selectId($data['id']);
             if($selectId){
                 return View::render('ingredientcat/edit', ['ingredientcat' => $selectId]);
@@ -77,7 +77,7 @@ class IngredientCatController {
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
 
         if($validator->isSuccess()){
-                $ingredientcat = new Ingredientcat;
+                $ingredientcat = new IngredientCat;
                 $update = $ingredientcat->update($data, $get['id']);
 
                 if($update){
@@ -93,7 +93,7 @@ class IngredientCatController {
     }
 
     public function delete($data){
-        $ingredientcat = new  Ingredientcat;
+        $ingredientcat = new  IngredientCat;
         $delete = $ingredientcat->delete($data['id']);
         if($delete){
             return View::redirect('ingredientcat');

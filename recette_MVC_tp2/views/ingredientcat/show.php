@@ -1,6 +1,6 @@
 {{ include('layouts/header.php', { title: 'Show'})}}
     <div class="container">
-        <h2>Ingredientcat Show</h2>
+        <h2>IngredientCat Show</h2>
         <hr>
         <p><strong>Nom:</strong> {{ ingredientcat.nom }}</p>
 

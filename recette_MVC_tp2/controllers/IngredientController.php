@@ -2,7 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\Ingredient;
-use App\Models\Ingredientcat;
+use App\Models\IngredientCat;
 use App\Providers\View;
 use App\Providers\Validator;
 
@@ -13,7 +13,7 @@ class ingredientController {
         $ingredient = new Ingredient;
         $select = $ingredient->select();
 
-        $ingredientcat = new Ingredientcat;
+        $ingredientcat = new IngredientCat;
         $selectCat = $ingredientcat->select();
         
         if($select && $selectCat){
@@ -29,7 +29,7 @@ class ingredientController {
             $selectId = $ingredient->selectId($data['id']);
 
             if($selectId){
-                $ingredientcat = new Ingredientcat;
+                $ingredientcat = new IngredientCat;
                 $selectCat = $ingredientcat->select();
                 return View::render('ingredient/show', ['ingredient' => $selectId, 'ingredientcats' => $selectCat]);
             }else{
@@ -42,7 +42,7 @@ class ingredientController {
 
     public function create(){
 
-        $ingredientcat = new Ingredientcat;
+        $ingredientcat = new IngredientCat;
         $selectCat = $ingredientcat->select();
         return View::render('ingredient/create', ['ingredientcats' => $selectCat]);
     }
@@ -73,7 +73,7 @@ class ingredientController {
             $ingredient = new Ingredient;
             $selectId = $ingredient->selectId($data['id']);
             if($selectId){
-                $ingredientcat = new Ingredientcat;
+                $ingredientcat = new IngredientCat;
                 $selectCat = $ingredientcat->select();
 
                 return View::render('ingredient/edit', ['ingredient' => $selectId, 'ingredientcats' => $selectCat]);

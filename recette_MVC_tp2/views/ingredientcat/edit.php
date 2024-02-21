@@ -1,6 +1,6 @@
-{{ include('layouts/header.php', { title: 'Ingredientcat'})}}
+{{ include('layouts/header.php', { title: 'IngredientCat'})}}
     <div class="container">
-        <h2>Ingredientcat Edit</h2>
+        <h2>IngredientCat Edit</h2>
         <form method="post">
         <label>Nom
                 <input type="text" name="nom" value="{{ ingredientcat.nom }}">

@@ -1,5 +1,5 @@
-{{ include('layouts/header.php', { title: 'Ingredientcat'})}}
-    <h1>Ingredientcat</h1>
+{{ include('layouts/header.php', { title: 'IngredientCat'})}}
+    <h1>IngredientCat</h1>
     <table>
         <thead>
             <tr>
@@ -17,4 +17,4 @@
         </tbody>
     </table>
     
-    <a href="{{ base }}/ingredientcat/create" class="btn" >Ingredientcat Create</a>
+    <a href="{{ base }}/ingredientcat/create" class="btn" >IngredientCat Create</a>
