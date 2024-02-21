@@ -25,6 +25,7 @@ class ingredientController {
 
     public function show($data = []){
         if(isset($data['id']) && $data['id']!=null){
+            print_r($data);
             $ingredient = new Ingredient;
             $selectId = $ingredient->selectId($data['id']);
 
@@ -51,7 +52,7 @@ class ingredientController {
         $validator = new Validator;
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
         /* VAlider que c'est un INT et required */
-        $validator->field('ingredient_categorie', $data['ingredient_categorie'], 'Le id de la catégorie')->min(1)->required();
+        $validator->field('ingredient_categorie_id', $data['ingredient_categorie_id'], 'Le id de la catégorie')->min(1)->required();
 
         if($validator->isSuccess()){
             $ingredient = new Ingredient;

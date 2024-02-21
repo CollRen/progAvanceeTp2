@@ -42,7 +42,7 @@ class ingredientController {
         
         $validator = new Validator;
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
-        $validator->field('ingredient_categorie', $data['ingredient_categorie'], 'Le ID')->min(1)->max(45);
+        $validator->field('ingredient_categorie_id', $data['ingredient_categorie_id'], 'Le ID')->min(1)->max(45);
 
         if($validator->isSuccess()){
             $recettehasingredient = new Recettehasingredient;
@@ -76,7 +76,7 @@ class ingredientController {
         // $get['id'];
         $validator = new Validator;
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
-        $validator->field('ingredient_categorie', $data['ingredient_categorie'], 'Le ID')->min(1)->max(45);
+        $validator->field('ingredient_categorie_id', $data['ingredient_categorie_id'], 'Le ID')->min(1)->max(45);
 
 
         if($validator->isSuccess()){

@@ -9,11 +9,11 @@
         <span class="error">{{ errors.nom }}</span>
         {% endif %}
 
-        <select name="ingredient_categorie" id="">
+        <select name="ingredient_categorie_id" id="">
 
             {% for ingredientCat in ingredientcats %}
 
-            <option value="{{ ingredientCat.id }}" {% if ingredientCat.id == ingredient.ingredient_categorie %} selected {% endif %}>{{ ingredientCat.nom }}</option>
+            <option value="{{ ingredientCat.id }}" {% if ingredientCat.id == ingredient.ingredient_categorie_id %} selected {% endif %}>{{ ingredientCat.nom }}</option>
 
             {% endfor %}
         </select>

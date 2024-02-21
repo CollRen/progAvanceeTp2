@@ -8,7 +8,6 @@
 
 1. Pouvoir choisir l'auteur et la catégorie lors de la création
     - SQL
-        - Ajouter auteur_id
         - Ajouter recette_categorie_id
     - /create.php ->    Ajouter ces champs dans le formulaire
 
@@ -20,6 +19,10 @@
     - Ajouter auteur
     - Ajouter Catégorie
 
+
+3. S'assurer qu'il y a des données dans toutes les tables dans la création SQL
+    - Ou gérer le cas limite: Il n'y a pas encore de données sur cette page
+
 #### Éventuellement :
 
 - Création de recette: choisir les ingrédients => recette_has_ingredient
@@ -29,13 +32,10 @@
 ## Ajustements
 
 1. SQL
- - changer table categorie pour recette_categorie
-    - Ajouter suffix '_id' à ingredient_categorie (BD && Projet)
-    - Changer HTML pour 'Temps en minutes'
-    - Changer SQL des temps de recettte pour INT
     - Montre mon SQL à Marcos
 
 2. Nettoyage
+    - Bug avec le edit sans changment dans certaines table
 - Rectifier les occurences de "errors.[quelque_chose]" 
     - ex: errors.zip_code
 

@@ -32,15 +32,15 @@ Route::post('/auteur/delete', 'AuteurController@delete');
 
 
 
-Route::get('/categorie', 'CategorieController@index');
-Route::get('/categorie/show', 'CategorieController@show');
+Route::get('/categorie', 'RecetteCategorieController@index');
+Route::get('/categorie/show', 'RecetteCategorieController@show');
 
-Route::get('/categorie/create', 'CategorieController@create');
-Route::post('/categorie/create', 'CategorieController@store');
+Route::get('/categorie/create', 'RecetteCategorieController@create');
+Route::post('/categorie/create', 'RecetteCategorieController@store');
 
-Route::get('/categorie/edit', 'CategorieController@edit');
-Route::post('/categorie/edit', 'CategorieController@update');
-Route::post('/categorie/delete', 'CategorieController@delete');
+Route::get('/categorie/edit', 'RecetteCategorieController@edit');
+Route::post('/categorie/edit', 'RecetteCategorieController@update');
+Route::post('/categorie/delete', 'RecetteCategorieController@delete');
 
 
 Route::get('/umesure', 'UmesureController@index');

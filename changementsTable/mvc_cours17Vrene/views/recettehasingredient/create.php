@@ -10,7 +10,7 @@
             {% endif %}
 
 
-            <select name="ingredient_categorie" id="">{{  }}
+            <select name="ingredient_categorie_id" id="">{{  }}
 
                 {% for ingredientCat in ingredientcats %}
 

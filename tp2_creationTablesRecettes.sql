@@ -1,25 +1,27 @@
 create database recettes;
 
-create table recette(
-id int not null auto_increment primary key,
-titre VARCHAR(60),
-description text(256),
-temps_preparation VARCHAR(12),
-temps_cuisson VARCHAR(12)
-);
-
 create table auteur(
 id int not null auto_increment primary key,
 nom VARCHAR(45),
 prenom text(45)
 );
 
-create table categorie(
+create table recette_categorie(
 id int not null auto_increment primary key,
 nom VARCHAR(45)
 );
 
-create table ingredient_categorie(
+create table recette(
+id int not null auto_increment primary key,
+titre VARCHAR(60),
+description text(256),
+temps_preparation VARCHAR(12),
+temps_cuisson VARCHAR(12),
+recette_categorie_id INT,
+auteur_id INT
+);
+
+create table ingredient_categorie_id(
 id int not null auto_increment primary key,
 nom VARCHAR(45)
 );
@@ -32,7 +34,7 @@ nom VARCHAR(20)
 create table ingredient(
 id int not null auto_increment primary key,
 nom varchar(45) not null unique,
-ingredient_categorie INT  -- Éventuellement ajouter NOT NULL
+ingredient_categorie_id INT  -- Éventuellement ajouter NOT NULL
 );
 
 create table recette_has_ingredient(
@@ -45,7 +47,7 @@ constraint fk_ingredient_id foreign key (ingredient_id) REFERENCES ingredient (i
 );
 
 
-INSERT INTO ingredient_categorie (`id`, `nom`) VALUES 
+INSERT INTO ingredient_categorie_id (`id`, `nom`) VALUES 
 (NULL, 'Épices'),
 (NULL, 'Fromage'),
 (NULL, 'Viande'),
@@ -66,13 +68,26 @@ INSERT INTO unite_mesure (`id`, `nom`) VALUES
 INSERT INTO `recettes`.`ingredient`
 (
 `nom`,
-`ingredient_categorie`)
+`ingredient_categorie_id`)
 VALUES (
 'Sel de célerie',
 1);
 
-INSERT INTO categorie (`id`, `nom`) VALUES 
+INSERT INTO recette_categorie (`id`, `nom`) VALUES 
 (NULL, 'Dessert'),
 (NULL, 'Plats principaux');
+
+
+INSERT INTO `recettes`.`recette_has_ingredient`
+(`recette_id`,
+`ingredient_id`,
+`quantite`,
+`unite_mesure_id`)
+VALUES
+(1,
+1,
+2,
+1);
+
 
 

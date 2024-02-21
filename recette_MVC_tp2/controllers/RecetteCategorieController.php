@@ -1,15 +1,15 @@
 <?php
 namespace App\Controllers;
 
-use App\Models\Categorie;
+use App\Models\RecetteCategorie;
 use App\Providers\View;
 use App\Providers\Validator;
 
 
-class CategorieController {
+class RecetteCategorieController {
 
     public function index(){
-        $categorie = new Categorie;
+        $categorie = new RecetteCategorie;
         $select = $categorie->select();
         //print_r($select);
         //include('views/categorie/index.php');
@@ -22,7 +22,7 @@ class CategorieController {
 
     public function show($data = []){
         if(isset($data['id']) && $data['id']!=null){
-            $categorie = new Categorie;
+            $categorie = new RecetteCategorie;
             $selectId = $categorie->selectId($data['id']);
             if($selectId){
                 return View::render('categorie/show', ['categorie' => $selectId]);
@@ -44,7 +44,7 @@ class CategorieController {
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
 
         if($validator->isSuccess()){
-            $categorie = new Categorie;
+            $categorie = new RecetteCategorie;
             $insert = $categorie->insert($data);        
             if($insert){
                 return View::redirect('categorie');
@@ -60,7 +60,7 @@ class CategorieController {
 
     public function edit($data = []){
         if(isset($data['id']) && $data['id']!=null){
-            $categorie = new Categorie;
+            $categorie = new RecetteCategorie;
             $selectId = $categorie->selectId($data['id']);
             if($selectId){
                 return View::render('categorie/edit', ['categorie' => $selectId]);
@@ -78,7 +78,7 @@ class CategorieController {
 
 
         if($validator->isSuccess()){
-                $categorie = new Categorie;
+                $categorie = new RecetteCategorie;
                 $update = $categorie->update($data, $get['id']);
 
                 if($update){

@@ -5,7 +5,7 @@
     <p><strong>Nom:</strong> {{ ingredient.nom }}</p>
 
     {% for ingredientCat in ingredientcats %}
-        {% if ingredientCat.id == ingredient.ingredient_categorie %}
+        {% if ingredientCat.id == ingredient.ingredient_categorie_id %}
 
             <p><strong>Catégorie:</strong> {{ ingredientCat.nom }} </p>
 
