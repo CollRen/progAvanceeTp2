@@ -1,13 +1,5 @@
 {{ include('layouts/header.php', { title: 'Ingredient'})}}
     <h1>Ingredient</h1>
-
-    <select name="ingredient_categorie" id="">
-
-{% for ingredientcat in ingredientcats %}
-
-    <option value="{{ ingredientcat.id }}">{{ ingredientcat.nom }}</option>
-
-{% endfor %}
 </select>
     <table>
         <thead>

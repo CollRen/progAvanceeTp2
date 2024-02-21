@@ -5,8 +5,8 @@
             <tr>
                 <th>Titre</th>
                 <th>Description</th>
-                <th>Temps de cuisson</th>
                 <th>Temps préparation</th>
+                <th>Temps de cuisson</th>
             </tr>
         </thead>
         <tbody>
@@ -14,8 +14,8 @@
             <tr>
                 <td><a href="{{ base }}/recette/show?id={{ recette.id }}">{{ recette.titre }}</a></td>
                 <td>{{ recette.description }}</td>
-                <td>{{ recette.temps_cuisson }}</td>
                 <td>{{ recette.temps_preparation }}</td>
+                <td>{{ recette.temps_cuisson }}</td>
             </tr>
         {% endfor %}
         </tbody>

@@ -2,17 +2,17 @@
 
 ## Ajustements
 
-1. Nomenclature
-    - Ajouter suffix '_id' à ingredient_categorie (Voir point SQL)
 2. Ajouter table ing.Cat dans Show
 3. Twig page ing.cat
     - Il peut y avoir un message d'erreur?
-4. BD changer SQL des temps de recettte pour INT 
-    - Et changer HTML pour 'Temps en minutes'
 5. Ajouter PNG du diagram à la racine de mon dossier
 6. SQL
     - Ajouter suffix '_id' à ingredient_categorie
     - Montre mon SQL à Marcos
+    - Ajouter suffix '_id' à ingredient_categorie (Voir point SQL)
+    - Changer HTML pour 'Temps en minutes'
+    - Changer SQL des temps de recettte pour INT 
+
 7. Montrer le bug dans Idit lorsque Clické une deuxième fois
 
 ## Création d'entités
