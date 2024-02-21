@@ -1,6 +1,19 @@
 # progAvanceeTp2
 
+## Ajustements
 
+1. Nomenclature
+    - Changer nom de class IngredientCatController POUR IngredientCatController
+    - Ajouter suffix '_id' à ingredient_categorie (Voir point SQL)
+2. Ajouter table ing.Cat dans Show
+3. Twig page ing.cat
+4. BD changer SQL des temps de recettte pour INT 
+    - Et changer HTML pour 'Temps en minutes'
+5. Ajouter PNG du diagram à la racine de mon dossier
+6. SQL
+    - Ajouter suffix '_id' à ingredient_categorie
+    - Montre mon SQL à Marcos
+7. Montrer le bug dans Idit lorsque Clické une deuxième fois
 
 ## Création d'entités
 

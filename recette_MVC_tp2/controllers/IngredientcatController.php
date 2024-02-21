@@ -6,7 +6,7 @@ use App\Providers\View;
 use App\Providers\Validator;
 
 
-class IngredientcatController {
+class IngredientCatController {
 
     public function index(){
         $ingredientcat = new Ingredientcat;
