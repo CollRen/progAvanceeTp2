@@ -17,3 +17,5 @@
         </tbody>
     </table>
     <a href="{{ base }}/recettehasingredient/create" class="btn" >Recettehasingredient Create</a>
+
+    

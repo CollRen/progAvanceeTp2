@@ -2,6 +2,7 @@
 
 ## Ajustements
 
+1. Changer ingreditcat pour ingre.. Cat
 2. Ajouter table ing.Cat dans Show
 3. Twig page ing.cat
     - Il peut y avoir un message d'erreur?

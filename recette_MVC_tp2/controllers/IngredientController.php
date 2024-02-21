@@ -27,8 +27,11 @@ class ingredientController {
         if(isset($data['id']) && $data['id']!=null){
             $ingredient = new Ingredient;
             $selectId = $ingredient->selectId($data['id']);
+
             if($selectId){
-                return View::render('ingredient/show', ['ingredient' => $selectId]);
+                $ingredientcat = new Ingredientcat;
+                $selectCat = $ingredientcat->select();
+                return View::render('ingredient/show', ['ingredient' => $selectId, 'ingredientcats' => $selectCat]);
             }else{
                 return View::render('error');
             }
