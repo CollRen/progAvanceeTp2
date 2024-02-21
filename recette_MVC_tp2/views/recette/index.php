@@ -3,11 +3,10 @@
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Address</th>
-                <th>phone</th>
-                <th>Zip Code</th>
-                <th>Email</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Temps de cuisson</th>
+                <th>Temps préparation</th>
             </tr>
         </thead>
         <tbody>
@@ -17,7 +16,6 @@
                 <td>{{ recette.description }}</td>
                 <td>{{ recette.temps_cuisson }}</td>
                 <td>{{ recette.temps_preparation }}</td>
-                <td>{{ recette.email }}</td>
             </tr>
         {% endfor %}
         </tbody>

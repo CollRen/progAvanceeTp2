@@ -8,6 +8,17 @@
             {% if errors.name is defined %}
                 <span class="error">{{ errors.nom }}</span>
             {% endif %}
+
+<!-- Ajouter la validation pour ceci -->
+<!-- Ajouter if pour le 'selected pour ceci -->
+            <select name="ingredient_categorie" id=""> 
+
+{% for ingredientcat in ingredientcats %}
+
+    <option value="{{ ingredientcat.id }}">{{ ingredientcat.nom }}</option>
+
+{% endfor %}
+</select>
            
             <input type="submit" class="btn" value="Update">
         </form>

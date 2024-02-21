@@ -16,7 +16,7 @@ use Twig\Node\Node;
 use Twig\Token;
 
 /**
- * Flushes the output to the client.
+ * Flushes the output to the recettehasingredient.
  *
  * @see flush()
  *

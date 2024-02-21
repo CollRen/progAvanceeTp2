@@ -47,7 +47,8 @@ class ingredientController {
     public function store($data){
         $validator = new Validator;
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
-        //$validator->field('ingredient_categorie', $data['ingredient_categorie'], 'Le id de la catégorie')->min(1);
+        /* VAlider que c'est un INT et required */
+        $validator->field('ingredient_categorie', $data['ingredient_categorie'], 'Le id de la catégorie')->min(1)->required();
 
         if($validator->isSuccess()){
             $ingredient = new Ingredient;
@@ -69,7 +70,10 @@ class ingredientController {
             $ingredient = new Ingredient;
             $selectId = $ingredient->selectId($data['id']);
             if($selectId){
-                return View::render('ingredient/edit', ['ingredient' => $selectId]);
+                $ingredientcat = new Ingredientcat;
+                $selectCat = $ingredientcat->select();
+
+                return View::render('ingredient/edit', ['ingredient' => $selectId, 'ingredientcats' => $selectCat]);
             }else{
                 return View::render('error');
             }

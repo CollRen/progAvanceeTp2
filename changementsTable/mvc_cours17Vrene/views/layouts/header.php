@@ -9,8 +9,8 @@
 <body>
     <nav>
         <ul>
-            <li><a href="{{base}}/client">Client</a></li>
-            <li><a href="{{base}}/client/create">Create</a></li>
+            <li><a href="{{base}}/recettehasingredient">ReHasIng</a></li>
+            <li><a href="{{base}}/recettehasingredient/create">ReHasIng-Create</a></li>
             <li><a href="">Users</a></li>
             <li><a href="">Login</a></li>
         </ul>
