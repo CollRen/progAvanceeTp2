@@ -4,6 +4,35 @@
 
 ### Recette
 
+
+##### Auteur et Catégorie dans Recette
+
+- Changements à faire dans 
+    - store, edit
+    - Changement différents dans create
+
+```php
+/RecetteController -> Ajouter ces deux lignes sous show
+        $ingredientCat = new IngredientCat;
+        $selectCat = $ingredientCat->select();
+        
+        if($select && $selectCat){
+            return View::render('ingredient/index', ['ingredients' => $select, 'ingredientcats' => $selectCat]);
+```
+
+- create
+```php    
+    public function create(){
+        $ingredientCat = new IngredientCat;
+        $selectCat = $ingredientCat->select();
+        return View::render('ingredient/create', ['ingredientcats' => $selectCat]);
+    }
+```
+
+##### HTML
+
+- HTML -> Ajuster twig
+
 #### Objectif
 
 1. Pouvoir choisir l'auteur et la catégorie lors de la création
