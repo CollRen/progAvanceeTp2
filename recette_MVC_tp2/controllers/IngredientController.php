@@ -85,7 +85,8 @@ class ingredientController {
         }
     }
     public function update($data, $get){
-        // $get['id'];
+        $id = $_GET['id']; // S'il n'y a pas de changement
+
         $validator = new Validator;
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
 
@@ -96,7 +97,7 @@ class ingredientController {
                 if($update){
                     return View::redirect('ingredient/show?id='.$get['id']);
                 }else{
-                    return View::render('error');
+                    return View::redirect('ingredient/show?id='. $id);
                 }
         }else{
             $errors = $validator->getErrors();

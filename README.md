@@ -1,22 +1,50 @@
 # progAvanceeTp2
 
+## Ajustement principaux
+
+### Recette
+
+#### Objectif
+
+1. Pouvoir choisir l'auteur et la catégorie lors de la création
+    - SQL
+        - Ajouter auteur_id
+        - Ajouter recette_categorie_id
+    - /create.php ->    Ajouter ces champs dans le formulaire
+
+2. Edit recette
+- Mécanique affichage twig:
+    - /edit.php -> 
+    - /show.php
+    - /index.php
+    - Ajouter auteur
+    - Ajouter Catégorie
+
+#### Éventuellement :
+
+- Création de recette: choisir les ingrédients => recette_has_ingredient
+    1. Ajuster formulaire dans /recette/create.php
+    2. Ajuster la class Recette -> store
+
 ## Ajustements
 
-2. Ajouter table ing.Cat dans Show
+1. SQL
+ - changer table categorie pour recette_categorie
+    - Ajouter suffix '_id' à ingredient_categorie (BD && Projet)
+    - Changer HTML pour 'Temps en minutes'
+    - Changer SQL des temps de recettte pour INT
+    - Montre mon SQL à Marcos
+
+2. Nettoyage
+- Rectifier les occurences de "errors.[quelque_chose]" 
+    - ex: errors.zip_code
 
 3. Twig page ing.cat
     - Il peut y avoir un message d'erreur?
 
 5. Ajouter PNG du diagram à la racine de mon dossier
 
-6. SQL
-    - Ajouter suffix '_id' à ingredient_categorie
-    - Montre mon SQL à Marcos
-    - Ajouter suffix '_id' à ingredient_categorie (Voir point SQL)
-    - Changer HTML pour 'Temps en minutes'
-    - Changer SQL des temps de recettte pour INT 
-
-7. Montrer le bug dans Idit lorsque Clické une deuxième fois
+6. Montrer le bug dans Idit lorsque Clické une deuxième fois
 
 
 

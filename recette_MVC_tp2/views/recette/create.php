@@ -14,13 +14,13 @@
             {% if errors.address is defined %}
                 <span class="error">{{ errors.address}}</span>
             {% endif %}
-            <label>temps_preparation
+            <label>Temps de préparation <small>(En minutes)</small>
                 <input type="text" name="temps_preparation" value="{{ recette.temps_preparation }}">
             </label>
             {% if errors.zip_code is defined %}
                 <span class="error">{{ errors.zip_code}}</span>
             {% endif %}
-            <label>temps_cuisson
+            <label>temps_cuisson <small>(En minutes)</small>
                 <input type="text" name="temps_cuisson" value="{{ recette.temps_cuisson }}">
             </label>
             {% if errors.phone is defined %}
