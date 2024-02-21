@@ -12,9 +12,9 @@
 
             <select name="ingredient_categorie" id="">{{  }}
 
-                {% for ingredientcat in ingredientcats %}
+                {% for ingredientCat in ingredientcats %}
 
-                    <option value="{{ ingredientcat.id }}">{{ ingredientcat.nom }}</option>
+                    <option value="{{ ingredientCat.id }}">{{ ingredientCat.nom }}</option>
             
                 {% endfor %}
             </select>

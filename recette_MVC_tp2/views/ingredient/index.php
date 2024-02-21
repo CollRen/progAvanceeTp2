@@ -13,10 +13,10 @@
         <tr>
             <td><a href="{{ base }}/ingredient/show?id={{ ingredient.id }}">{{ ingredient.nom }}</a></td>
             <td>
-                {% for ingredientcat in ingredientcats %}
+                {% for ingredientCat in ingredientcats %}
 
-                    {% if ingredientcat.id == ingredient.ingredient_categorie %} 
-                        {{ ingredientcat.nom }} 
+                    {% if ingredientCat.id == ingredient.ingredient_categorie %} 
+                        {{ ingredientCat.nom }} 
                     {% endif %} 
 
                 {% endfor %}

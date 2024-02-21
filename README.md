@@ -2,11 +2,13 @@
 
 ## Ajustements
 
-1. Changer ingreditcat pour ingre.. Cat
 2. Ajouter table ing.Cat dans Show
+
 3. Twig page ing.cat
     - Il peut y avoir un message d'erreur?
+
 5. Ajouter PNG du diagram à la racine de mon dossier
+
 6. SQL
     - Ajouter suffix '_id' à ingredient_categorie
     - Montre mon SQL à Marcos
@@ -15,6 +17,8 @@
     - Changer SQL des temps de recettte pour INT 
 
 7. Montrer le bug dans Idit lorsque Clické une deuxième fois
+
+
 
 ## Création d'entités
 

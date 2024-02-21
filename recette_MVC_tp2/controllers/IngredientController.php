@@ -13,8 +13,8 @@ class ingredientController {
         $ingredient = new Ingredient;
         $select = $ingredient->select();
 
-        $ingredientcat = new IngredientCat;
-        $selectCat = $ingredientcat->select();
+        $ingredientCat = new IngredientCat;
+        $selectCat = $ingredientCat->select();
         
         if($select && $selectCat){
             return View::render('ingredient/index', ['ingredients' => $select, 'ingredientcats' => $selectCat]);
@@ -29,8 +29,8 @@ class ingredientController {
             $selectId = $ingredient->selectId($data['id']);
 
             if($selectId){
-                $ingredientcat = new IngredientCat;
-                $selectCat = $ingredientcat->select();
+                $ingredientCat = new IngredientCat;
+                $selectCat = $ingredientCat->select();
                 return View::render('ingredient/show', ['ingredient' => $selectId, 'ingredientcats' => $selectCat]);
             }else{
                 return View::render('error');
@@ -42,8 +42,8 @@ class ingredientController {
 
     public function create(){
 
-        $ingredientcat = new IngredientCat;
-        $selectCat = $ingredientcat->select();
+        $ingredientCat = new IngredientCat;
+        $selectCat = $ingredientCat->select();
         return View::render('ingredient/create', ['ingredientcats' => $selectCat]);
     }
 
@@ -73,8 +73,8 @@ class ingredientController {
             $ingredient = new Ingredient;
             $selectId = $ingredient->selectId($data['id']);
             if($selectId){
-                $ingredientcat = new IngredientCat;
-                $selectCat = $ingredientcat->select();
+                $ingredientCat = new IngredientCat;
+                $selectCat = $ingredientCat->select();
 
                 return View::render('ingredient/edit', ['ingredient' => $selectId, 'ingredientcats' => $selectCat]);
             }else{

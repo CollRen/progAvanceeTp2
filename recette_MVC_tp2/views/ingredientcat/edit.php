@@ -3,7 +3,7 @@
         <h2>IngredientCat Edit</h2>
         <form method="post">
         <label>Nom
-                <input type="text" name="nom" value="{{ ingredientcat.nom }}">
+                <input type="text" name="nom" value="{{ ingredientCat.nom }}">
             </label>
             {% if errors.name is defined %}
                 <span class="error">{{ errors.nom }}</span>

@@ -8,13 +8,13 @@
             </tr>
         </thead>
         <tbody>
-        {% for ingredientcat in ingredientcats %}
+        {% for ingredientCat in ingredientcats %}
             <tr>
-                <td><a href="{{ base }}/ingredientcat/show?id={{ ingredientcat.id }}">{{ ingredientcat.nom }}</a></td>
+                <td><a href="{{ base }}/ingredientCat/show?id={{ ingredientCat.id }}">{{ ingredientCat.nom }}</a></td>
 
             </tr>
         {% endfor %}
         </tbody>
     </table>
     
-    <a href="{{ base }}/ingredientcat/create" class="btn" >IngredientCat Create</a>
+    <a href="{{ base }}/ingredientCat/create" class="btn" >IngredientCat Create</a>

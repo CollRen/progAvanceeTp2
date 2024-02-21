@@ -18,8 +18,8 @@
             <li><a href="{{base}}/categorie">Catégorie R.</a></li>
             <li><a href="{{base}}/categorie/create">Creer</a></li>
             <li>||</li>
-            <li><a href="{{base}}/ingredientcat">Catégorie ING</a></li>
-            <li><a href="{{base}}/ingredientcat/create">Creer</a></li>
+            <li><a href="{{base}}/ingredientCat">Catégorie ING</a></li>
+            <li><a href="{{base}}/ingredientCat/create">Creer</a></li>
             <li>||</li>
             <li><a href="{{base}}/ingredient">Ingredient</a></li>
             <li><a href="{{base}}/ingredient/create">Creer</a></li>

@@ -2,12 +2,12 @@
     <div class="container">
         <h2>IngredientCat Show</h2>
         <hr>
-        <p><strong>Nom:</strong> {{ ingredientcat.nom }}</p>
+        <p><strong>Nom:</strong> {{ ingredientCat.nom }}</p>
 
 
-        <a href="{{base}}/ingredientcat/edit?id={{ingredientcat.id}}" class="btn block">Edit</a>
-        <form action="{{base}}/ingredientcat/delete" method="post">
-            <input type="hidden" name="id" value="{{ ingredientcat.id }}">
+        <a href="{{base}}/ingredientCat/edit?id={{ingredientCat.id}}" class="btn block">Edit</a>
+        <form action="{{base}}/ingredientCat/delete" method="post">
+            <input type="hidden" name="id" value="{{ ingredientCat.id }}">
             <button class="btn block red">Delete</button>
         </form>
     </div>

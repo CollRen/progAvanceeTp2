@@ -55,15 +55,15 @@ Route::post('/umesure/delete', 'UmesureController@delete');
 
 
 
-Route::get('/ingredientcat', 'IngredientCatController@index');
-Route::get('/ingredientcat/show', 'IngredientCatController@show');
+Route::get('/ingredientCat', 'IngredientCatController@index');
+Route::get('/ingredientCat/show', 'IngredientCatController@show');
 
-Route::get('/ingredientcat/create', 'IngredientCatController@create');
-Route::post('/ingredientcat/create', 'IngredientCatController@store');
+Route::get('/ingredientCat/create', 'IngredientCatController@create');
+Route::post('/ingredientCat/create', 'IngredientCatController@store');
 
-Route::get('/ingredientcat/edit', 'IngredientCatController@edit');
-Route::post('/ingredientcat/edit', 'IngredientCatController@update');
-Route::post('/ingredientcat/delete', 'IngredientCatController@delete');
+Route::get('/ingredientCat/edit', 'IngredientCatController@edit');
+Route::post('/ingredientCat/edit', 'IngredientCatController@update');
+Route::post('/ingredientCat/delete', 'IngredientCatController@delete');
 
 
 

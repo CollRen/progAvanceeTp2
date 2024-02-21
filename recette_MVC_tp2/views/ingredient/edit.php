@@ -11,9 +11,9 @@
 
         <select name="ingredient_categorie" id="">
 
-            {% for ingredientcat in ingredientcats %}
+            {% for ingredientCat in ingredientcats %}
 
-            <option value="{{ ingredientcat.id }}" {% if ingredientcat.id == ingredient.ingredient_categorie %} selected {% endif %}>{{ ingredientcat.nom }}</option>
+            <option value="{{ ingredientCat.id }}" {% if ingredientCat.id == ingredient.ingredient_categorie %} selected {% endif %}>{{ ingredientCat.nom }}</option>
 
             {% endfor %}
         </select>

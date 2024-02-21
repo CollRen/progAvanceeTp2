@@ -9,12 +9,12 @@ use App\Providers\Validator;
 class IngredientCatController {
 
     public function index(){
-        $ingredientcat = new IngredientCat;
-        $select = $ingredientcat->select();
+        $ingredientCat = new IngredientCat;
+        $select = $ingredientCat->select();
         //print_r($select);
-        //include('views/ingredientcat/index.php');
+        //include('views/ingredientCat/index.php');
         if($select){
-            return View::render('ingredientcat/index', ['ingredientcats' => $select]);
+            return View::render('ingredientCat/index', ['ingredientcats' => $select]);
         }else{
             return View::render('error');
         }    
@@ -22,10 +22,10 @@ class IngredientCatController {
 
     public function show($data = []){
         if(isset($data['id']) && $data['id']!=null){
-            $ingredientcat = new IngredientCat;
-            $selectId = $ingredientcat->selectId($data['id']);
+            $ingredientCat = new IngredientCat;
+            $selectId = $ingredientCat->selectId($data['id']);
             if($selectId){
-                return View::render('ingredientcat/show', ['ingredientcat' => $selectId]);
+                return View::render('ingredientCat/show', ['ingredientCat' => $selectId]);
             }else{
                 return View::render('error');
             }
@@ -35,7 +35,7 @@ class IngredientCatController {
     }
 
     public function create(){
-        return View::render('ingredientcat/create');
+        return View::render('ingredientCat/create');
     }
 
     public function store($data){
@@ -44,26 +44,26 @@ class IngredientCatController {
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
 
         if($validator->isSuccess()){
-            $ingredientcat = new IngredientCat;
-            $insert = $ingredientcat->insert($data);        
+            $ingredientCat = new IngredientCat;
+            $insert = $ingredientCat->insert($data);        
             if($insert){
-                return View::redirect('ingredientcat');
+                return View::redirect('ingredientCat');
             }else{
                 return View::render('error');
             }
         }else{
             $errors = $validator->getErrors();
             //print_r($errors);
-            return View::render('ingredientcat/create', ['errors'=>$errors, 'ingredientcat' => $data]);
+            return View::render('ingredientCat/create', ['errors'=>$errors, 'ingredientCat' => $data]);
         }
     }
 
     public function edit($data = []){
         if(isset($data['id']) && $data['id']!=null){
-            $ingredientcat = new IngredientCat;
-            $selectId = $ingredientcat->selectId($data['id']);
+            $ingredientCat = new IngredientCat;
+            $selectId = $ingredientCat->selectId($data['id']);
             if($selectId){
-                return View::render('ingredientcat/edit', ['ingredientcat' => $selectId]);
+                return View::render('ingredientCat/edit', ['ingredientCat' => $selectId]);
             }else{
                 return View::render('error');
             }
@@ -77,26 +77,26 @@ class IngredientCatController {
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
 
         if($validator->isSuccess()){
-                $ingredientcat = new IngredientCat;
-                $update = $ingredientcat->update($data, $get['id']);
+                $ingredientCat = new IngredientCat;
+                $update = $ingredientCat->update($data, $get['id']);
 
                 if($update){
-                    return View::redirect('ingredientcat/show?id='.$get['id']);
+                    return View::redirect('ingredientCat/show?id='.$get['id']);
                 }else{
                     return View::render('error');
                 }
         }else{
             $errors = $validator->getErrors();
             //print_r($errors);
-            return View::render('ingredientcat/edit', ['errors'=>$errors, 'ingredientcat' => $data]);
+            return View::render('ingredientCat/edit', ['errors'=>$errors, 'ingredientCat' => $data]);
         }
     }
 
     public function delete($data){
-        $ingredientcat = new  IngredientCat;
-        $delete = $ingredientcat->delete($data['id']);
+        $ingredientCat = new  IngredientCat;
+        $delete = $ingredientCat->delete($data['id']);
         if($delete){
-            return View::redirect('ingredientcat');
+            return View::redirect('ingredientCat');
         }else{
             return View::render('error');
         }
