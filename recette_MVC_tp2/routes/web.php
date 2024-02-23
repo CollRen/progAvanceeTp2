@@ -89,20 +89,6 @@ Route::get('/recettehasingredient/edit', 'RecettehasingredientController@edit');
 Route::post('/recettehasingredient/edit', 'RecettehasingredientController@update');
 Route::post('/recettehasingredient/delete', 'RecettehasingredientController@delete');
 
-
-
-Route::get('/tester', 'TesterController@index');
-Route::get('/tester/show', 'TesterController@show');
-
-Route::get('/tester/create', 'TesterController@create');
-Route::post('/tester/create', 'TesterController@store');
-
-Route::get('/tester/edit', 'TesterController@edit');
-Route::post('/tester/edit', 'TesterController@update');
-Route::post('/tester/delete', 'TesterController@delete');
-
-
-
 Route::dispatch();
 ?>
 
