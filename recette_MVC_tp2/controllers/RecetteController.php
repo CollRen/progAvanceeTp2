@@ -54,6 +54,7 @@ class RecetteController {
 
         $recetteAuteur = new Auteur;
         $recetteAuteurSelect = $recetteAuteur->select();
+
         return View::render('recette/create', ['recetteCategories' => $recetteCategorieSelect, 'recetteAuteurs' => $recetteAuteurSelect]);
     }
 
@@ -89,11 +90,20 @@ class RecetteController {
     }
 
     public function edit($data = []){
+/*         print_r($data);
+        die(); */
         if(isset($data['id']) && $data['id']!=null){
             $recette = new Recette;
             $selectId = $recette->selectId($data['id']);
+
+            $recetteCategorie = new RecetteCategorie;
+            $recetteCategorieSelect = $recetteCategorie->select();
+    
+            $recetteAuteur = new Auteur;
+            $recetteAuteurSelect = $recetteAuteur->select();
+
             if($selectId){
-                return View::render('recette/edit', ['recette' => $selectId]);
+                return View::render('recette/edit', ['recette' => $selectId, 'recetteCats' => $recetteCategorieSelect, 'auteurs' => $recetteAuteurSelect]);
             }else{
                 return View::render('error');
             }
