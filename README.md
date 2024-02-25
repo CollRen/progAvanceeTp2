@@ -1,6 +1,32 @@
 # progAvanceeTp2
 
+
+## Ajustements à cours terme
+
+1. Revoir la validation, comparer avec notes de cours et simplifier
+2. ajouter la validation dans les Edits
+
+## Ajustments en fin de parcours
+
+### Design
+- Revoir le design de recette Show pour être plus comme un livre de recette
+- Mettre l'ption d'ajouter une image pour encore plus de beau
+- Définir les couleurs principales
+- Définir l'échelle type et rythmique dans des varibble
+
+
 ## Ajustement principaux
+
+- Changer le fichier htacces pour être compatible avec webdev
+
+- Ajouter le footer à la page création de recette
+
+- Ajouter le code twig pour faire afficher les messages d'erreurs dans le header
+- On pourrait appliquer le même principe avec des messages de succès...
+
+
+
+
 
 ### Recette
 
@@ -10,6 +36,7 @@
 - Changements à faire dans 
     - store, edit
     - Changement différents dans create
+    - Ajouter dans $fillable []
 
 ```php
 /RecetteController -> Ajouter ces deux lignes sous show
@@ -18,6 +45,7 @@
         
         if($select && $selectCat){
             return View::render('ingredient/index', ['ingredients' => $select, 'ingredientcats' => $selectCat]);
+        }
 ```
 
 - create

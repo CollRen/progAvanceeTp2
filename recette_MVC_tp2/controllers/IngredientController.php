@@ -2,7 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\Ingredient;
-use App\Models\IngredientCat;
+use App\Models\IngredientCat;  // Besoin de ça
 use App\Providers\View;
 use App\Providers\Validator;
 
@@ -13,11 +13,11 @@ class ingredientController {
         $ingredient = new Ingredient;
         $select = $ingredient->select();
 
-        $ingredientCat = new IngredientCat;
-        $selectCat = $ingredientCat->select();
+        $ingredientCat = new IngredientCat; // Besoin de ça
+        $selectCat = $ingredientCat->select(); // Besoin de ça
         
         if($select && $selectCat){
-            return View::render('ingredient/index', ['ingredients' => $select, 'ingredientcats' => $selectCat]);
+            return View::render('ingredient/index', ['ingredients' => $select, 'ingredientcats' => $selectCat]); // Besoin de ça
         }else{
             return View::render('error');
         }    

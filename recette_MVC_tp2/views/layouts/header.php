@@ -23,13 +23,8 @@
             <li>||</li>
             <li><a href="{{base}}/ingredient">Ingredient</a></li>
             <li><a href="{{base}}/ingredient/create">Creer</a></li>
-            <li>||</li>
-            <li><a href="{{base}}/recettehasingredient">ReHasIng</a></li>
-            <li><a href="{{base}}/recettehasingredient/create">Creer</a></li>
-            <li>||</li>
             <li><a href="">Users</a></li>
             <li><a href="">Login</a></li>
-            <li>||</li>
         </ul>
     </nav>
     <main>
