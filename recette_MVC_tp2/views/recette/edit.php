@@ -18,20 +18,20 @@
             <input type="text" name="temps_cuisson" value="{{ recette.temps_cuisson }}">
         </label>
 
-        <label for="recette_categorie_id">Catégorie:</label>
-        <select name="recette_categorie_id">
-            {% for recetteCat in recetteCats %}
+        <label for="auteur_id">Auteur:</label>
+        <select name="auteur_id" id="auteur_id">
+            {% for auteur in auteurs %}
 
-                <option value="{{ recetteCat.id }}" {% if recetteCat.id == recette.recette_categorie_id %} selected {% endif %}>{{ recetteCat.nom }}</option>
+                <option value="{{ auteur.id }}" {% if auteur.id == recette.auteur_id %} selected {% endif %}>{{ auteur.nom }}</option>
 
             {% endfor %}
         </select>
 
-        <label for="auteur_id">Auteur:</label>
-        <select name="auteur_id">
-            {% for auteur in auteurs %}
+        <label for="recette_categorie_id">Catégorie:</label>
+        <select name="recette_categorie_id" id="recette_categorie_id">
+            {% for recetteCat in recetteCats %}
 
-                <option value="{{ auteur.id }}" {% if auteur.id == recette.auteur_id %} selected {% endif %}>{{ auteur.nom }}</option>
+                <option value="{{ recetteCat.id }}" {% if recetteCat.id == recette.recette_categorie_id %} selected {% endif %}>{{ recetteCat.nom }}</option>
 
             {% endfor %}
         </select>

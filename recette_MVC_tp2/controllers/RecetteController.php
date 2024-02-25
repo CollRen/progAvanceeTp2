@@ -32,7 +32,6 @@ class RecetteController {
         if(isset($data['id']) && $data['id']!=null){
             $recette = new Recette;
             $selectId = $recette->selectId($data['id']);
-
             $recetteCat = new RecetteCategorie;
             $selectCatId = $recetteCat->selectId($data['recette_categorie_id']);
 
@@ -90,8 +89,7 @@ class RecetteController {
     }
 
     public function edit($data = []){
-/*         print_r($data);
-        die(); */
+
         if(isset($data['id']) && $data['id']!=null){
             $recette = new Recette;
             $selectId = $recette->selectId($data['id']);
@@ -112,26 +110,29 @@ class RecetteController {
         }
     }
     public function update($data, $get){
+
         // $get['id'];
         $validator = new Validator;
         $validator->field('titre', $data['titre'], 'Le nom')->min(2)->max(25);
         $validator->field('description', $data['description'])->max(45);
-        $validator->field('temps_preparation', $data['temps_preparation'], 'Zip Code')->max(10);
+        $validator->field('temps_preparation', $data['temps_preparation'], 'Temps Préparation')->max(10);
         $validator->field('temps_cuisson', $data['temps_cuisson'])->max(20);
-        
+        $validator->field('recette_categorie_id', $data['recette_categorie_id'])->max(10);
+        $validator->field('auteur_id', $data['auteur_id'])->max(10);
+
+
 
         if($validator->isSuccess()){
                 $recette = new Recette;
                 $update = $recette->update($data, $get['id']);
-
                 if($update){
-                    return View::redirect('recette/show?id='.$get['id']);
+                    return View::redirect('recette/show?id='.$get['id'].'&recette_categorie_id='.$data['recette_categorie_id'].'&auteur_id='.$data['auteur_id']);
                 }else{
                     return View::render('error');
                 }
         }else{
             $errors = $validator->getErrors();
-            //print_r($errors);
+            print_r($errors);
             return View::render('recette/edit', ['errors'=>$errors, 'recette' => $data]);
         }
     }
