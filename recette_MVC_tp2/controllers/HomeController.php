@@ -15,7 +15,7 @@ class HomeController {
     }
 
     public function home(){
-        $data = 'Hello from HomeController';
+        $data = 'Bonjour et bienvenu dans votre livre de recette numérique';
         include 'views/home.php';
     }
 }

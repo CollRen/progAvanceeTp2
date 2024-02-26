@@ -17,3 +17,5 @@
         </tbody>
     </table>
     <a href="{{ base }}/umesure/create" class="btn" >Umesure Create</a>
+
+    {{ include('layouts/footer.php') }}

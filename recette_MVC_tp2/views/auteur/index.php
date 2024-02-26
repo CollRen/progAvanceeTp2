@@ -17,3 +17,5 @@
         </tbody>
     </table>
     <a href="{{ base }}/auteur/create" class="btn" >Ajouter un auteur</a>
+
+    {{ include('layouts/footer.php') }}

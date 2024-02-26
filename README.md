@@ -1,5 +1,13 @@
 # progAvanceeTp2
 
+## Notes importantes
+
+- Si la validation ne passe pas, ajoute au render:
+
+```php
+return View::render('recette/create', ['recetteCategories' => $recetteCategorieSelect, 'recetteAuteurs' => $recetteAuteurSelect]);
+```
+
 
 ## Ajustements à cours terme
 

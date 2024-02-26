@@ -26,3 +26,5 @@
     </tbody>
 </table>
 <a href="{{ base }}/ingredient/create" class="btn">Ingredient Create</a>
+
+{{ include('layouts/footer.php') }}

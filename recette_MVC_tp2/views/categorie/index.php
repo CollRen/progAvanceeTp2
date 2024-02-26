@@ -16,3 +16,5 @@
         </tbody>
     </table>
     <a href="{{ base }}/categorie/create" class="btn" >Categorie Create</a>
+
+    {{ include('layouts/footer.php') }}

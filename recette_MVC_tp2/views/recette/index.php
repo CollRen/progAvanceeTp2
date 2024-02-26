@@ -36,4 +36,4 @@
     </table>
     <a href="{{ base }}/recette/create" class="btn" >Recette Create</a>
 
-
+    {{ include('layouts/footer.php') }}

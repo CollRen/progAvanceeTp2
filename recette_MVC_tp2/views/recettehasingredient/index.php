@@ -18,4 +18,6 @@
     </table>
     <a href="{{ base }}/recettehasingredient/create" class="btn" >Recettehasingredient Create</a>
 
+    {{ include('layouts/footer.php') }}
+
     

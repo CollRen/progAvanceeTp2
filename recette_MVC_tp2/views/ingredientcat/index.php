@@ -18,3 +18,5 @@
     </table>
     
     <a href="{{ base }}/ingredientCat/create" class="btn" >IngredientCat Create</a>
+
+    {{ include('layouts/footer.php') }}

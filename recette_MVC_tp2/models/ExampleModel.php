@@ -3,6 +3,6 @@ namespace App\Models;
 
 class ExampleModel{
     public function getData(){
-        return "Hello from Model to Controller";
+        return "Bonjour et bienvenu dans votre livre de recette numérique";
     }
 }

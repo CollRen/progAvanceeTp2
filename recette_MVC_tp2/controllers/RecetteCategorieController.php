@@ -94,7 +94,7 @@ class RecetteCategorieController {
     }
 
     public function delete($data){
-        $categorie = new  Categorie;
+        $categorie = new RecetteCategorie;
         $delete = $categorie->delete($data['id']);
         if($delete){
             return View::redirect('categorie');
