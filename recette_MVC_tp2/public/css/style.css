@@ -1,9 +1,12 @@
+@import './reset.css';
+@import './variables.css';
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     margin:auto;
 }
 nav {
-    background-color: #333;
+    background-color: var(--main-bg-color);
     overflow: hidden;
 }
 nav ul {
@@ -11,43 +14,46 @@ nav ul {
     margin: 0;
     padding: 0;
 }
-nav li {
-    float: left;
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: var(--space-xl);
 }
 nav li a {
-    display: block;
-    color: white;
+    font-size: var(--space-ml);
+    color: var(--main-txt-color);
     text-align: center;
-    padding: 14px 16px;
+    padding: var(--space-s);
     text-decoration: none;
 }
 main{
-    padding: 20px;
+    padding: var(--space-ml);
 }
 nav li a:hover {
-    background-color: #111;
+    opacity: 75%;
 }
 table {
     border-collapse: collapse; 
     width: 100%; 
 }
 th {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--main-bg-color);
+    color: var(--main-txt-color);
+    font-size: var(--space-m);
     text-align: left;
     padding: 10px;
 }
 td {
-    border: 1px solid #333;
+    border: 1px solid var(--main-bg-color);
     padding: 10px;
 }
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #7a483e35;
 }
 .container {
     width: 300px;
     margin: 0 auto;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #7A483E;
     padding: 30px;
     border-radius: 10px;
 }
@@ -60,7 +66,7 @@ input, select {
     width: 100%;
     padding: 5px;
     margin-bottom: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #7a483e58;
     border-radius: 5px;
 }
 .btn {
@@ -71,11 +77,11 @@ input, select {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    outline: 2px solid #3498db;
+    outline: 2px solid #7A483E;
     border: 0px;
-    color: #3498db;
+    color: var(--main-txt-color);
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--main-bg-color);
     transition: background-color 0.3s ease;
 }
 .btn.block{
@@ -83,8 +89,7 @@ input, select {
     padding: 5px 0px;
 }
 .btn:hover {
-    background-color: #3498db;
-    color: #fff;
+    opacity: 75%;
 }
 .btn.red {
     outline: 2px solid #98082a;
@@ -106,11 +111,16 @@ input, select {
     color:red;
 }
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--main-bg-color);
+    color: var(--main-txt-color);
     text-align: center;
-    padding: 20px;
+    padding: var(--space-ml);
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+a {
+    text-decoration: none;
+    color: var(--main-txt-color);
+    font-size: var(--space-m);
 }
