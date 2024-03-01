@@ -5,7 +5,7 @@
             <label>Nom
                 <input type="text" name="nom" value="{{ ingredient.nom }}">
             </label>
-            {% if errors.name is defined %}
+            {% if errors.nom is defined %}
                 <span class="error">{{ errors.nom }}</span>
             {% endif %}
 

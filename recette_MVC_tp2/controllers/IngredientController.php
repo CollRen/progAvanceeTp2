@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\Ingredient;
@@ -7,112 +8,122 @@ use App\Providers\View;
 use App\Providers\Validator;
 
 
-class ingredientController {
+class IngredientController
+{
 
-    public function index(){
+    public function index()
+    {
         $ingredient = new Ingredient;
         $select = $ingredient->select();
 
+
         $ingredientCat = new IngredientCat; // Besoin de ça
         $selectCat = $ingredientCat->select(); // Besoin de ça
-        
-        if($select && $selectCat){
+
+        if ($select && $selectCat) {
             return View::render('ingredient/index', ['ingredients' => $select, 'ingredientcats' => $selectCat]); // Besoin de ça
-        }else{
+        } else {
             return View::render('error');
-        }    
+        }
     }
 
-    public function show($data = []){
-        if(isset($data['id']) && $data['id']!=null){
+    public function show($data = [])
+    {
+        if (isset($data['id']) && $data['id'] != null) {
             print_r($data);
             $ingredient = new Ingredient;
             $selectId = $ingredient->selectId($data['id']);
 
-            if($selectId){
+            if ($selectId) {
                 $ingredientCat = new IngredientCat;
                 $selectCat = $ingredientCat->select();
                 return View::render('ingredient/show', ['ingredient' => $selectId, 'ingredientcats' => $selectCat]);
-            }else{
+            } else {
                 return View::render('error');
             }
-        }else{
-            return View::render('error', ['message'=>'Could not find this data']);
+        } else {
+            return View::render('error', ['message' => 'Could not find this data']);
         }
     }
 
-    public function create(){
+    public function create()
+    {
 
         $ingredientCat = new IngredientCat;
         $selectCat = $ingredientCat->select();
         return View::render('ingredient/create', ['ingredientcats' => $selectCat]);
     }
 
-    public function store($data){
-        $validator = new Validator;
-        $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
-        /* VAlider que c'est un INT et required */
-        $validator->field('ingredient_categorie_id', $data['ingredient_categorie_id'], 'Le id de la catégorie')->min(1)->required();
+    public function store($data)
+    {
 
-        if($validator->isSuccess()){
+        $validator = new Validator;
+
+        $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45)->required();
+
+        if ($validator->isSuccess()) {
             $ingredient = new Ingredient;
-            $insert = $ingredient->insert($data);        
-            if($insert){
+            $insert = $ingredient->insert($data);
+            if ($insert) {
                 return View::redirect('ingredient');
-            }else{
+            } else {
                 return View::render('error');
             }
-        }else{
+        } else {
             $errors = $validator->getErrors();
-            //print_r($errors);
-            return View::render('ingredient/create', ['errors'=>$errors, 'ingredient' => $data]);
+            $ingredientCat = new IngredientCat;
+            $selectCat = $ingredientCat->select();
+            return View::render('ingredient/create', ['errors' => $errors, 'ingredient' => $data, 'ingredientcats' => $selectCat]);
         }
     }
 
-    public function edit($data = []){
-        if(isset($data['id']) && $data['id']!=null){
+    public function edit($data = [])
+    {
+        if (isset($data['id']) && $data['id'] != null) {
             $ingredient = new Ingredient;
             $selectId = $ingredient->selectId($data['id']);
-            if($selectId){
+            if ($selectId) {
                 $ingredientCat = new IngredientCat;
                 $selectCat = $ingredientCat->select();
 
                 return View::render('ingredient/edit', ['ingredient' => $selectId, 'ingredientcats' => $selectCat]);
-            }else{
+            } else {
                 return View::render('error');
             }
-        }else{
-            return View::render('error', ['message'=>'Could not find this data']);
+        } else {
+            return View::render('error', ['message' => 'Could not find this data']);
         }
     }
-    public function update($data, $get){
+    public function update($data, $get)
+    {
         $id = $_GET['id']; // S'il n'y a pas de changement
 
         $validator = new Validator;
         $validator->field('nom', $data['nom'], 'Le nom')->min(2)->max(45);
 
-        if($validator->isSuccess()){
-                $ingredient = new Ingredient;
-                $update = $ingredient->update($data, $get['id']);
+        if ($validator->isSuccess()) {
+            $ingredient = new Ingredient;
+            $update = $ingredient->update($data, $get['id']);
 
-                if($update){
-                    return View::redirect('ingredient/show?id='.$get['id']);
-                }else{
-                    return View::redirect('ingredient/show?id='. $id);
-                }
-        }else{
+            if ($update) {
+                return View::redirect('ingredient/show?id=' . $get['id']);
+            } else {
+                return View::redirect('ingredient/show?id=' . $id);
+            }
+        } else {
             $errors = $validator->getErrors();
             //print_r($errors);
-            return View::render('ingredient/edit', ['errors'=>$errors, 'ingredient' => $data]);
+            return View::render('ingredient/edit', ['errors' => $errors, 'ingredient' => $data]);
         }
     }
 
-    public function delete($data){
+    public function delete($data)
+    {
         $ingredient = new  Ingredient;
         $delete = $ingredient->delete($data['id']);
-        if($delete){
+        if ($delete) {
             return View::redirect('ingredient');
-        }else{
+        } else {
             return View::render('error');
         }
     }

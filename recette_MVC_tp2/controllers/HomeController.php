@@ -1,21 +1,33 @@
 <?php
+
 namespace App\Controllers;
 
-use App\Models\ExampleModel;
+use App\Models\Recette;
+use App\Models\Auteur;
+use App\Models\RecetteCategorie;
 use App\Providers\View;
+use App\Providers\Validator;
 
-class HomeController {
-    
-    public function index(){
-       // $data = 'Hello from HomeController';
-        $model = new ExampleModel;
-        $data = $model->getData();
-        //include 'views/home.php';
-       View::render('home', ['var' => $data]);
-    }
 
-    public function home(){
-        $data = 'Bonjour et bienvenu dans votre livre de recette numérique';
-        include 'views/home.php';
+class HomeController
+{
+
+    public function index()
+    {
+        $recette = new Recette;
+        $select = $recette->select();
+
+        $auteur = new Auteur;
+        $selectAuteurs = $auteur->select();
+
+        $recetteCats = new RecetteCategorie;
+        $selectCat = $recetteCats->select();
+        //print_r($select);
+        //include('views/recette/index.php');
+        if ($select) {
+            return View::render('recette/index', ['recettes' => $select, 'recetteCats' => $selectCat, 'auteurs' => $selectAuteurs]);
+        } else {
+            return View::render('error');
+        }
     }
 }

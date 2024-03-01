@@ -42,7 +42,7 @@ class AuteurController {
     public function store($data){
         $validator = new Validator;
         $validator->field('prenom', $data['prenom'], 'Le nom')->min(2)->max(45);
-        $validator->field('nom', $data['nom'])->max(45);
+        $validator->field('nom', $data['nom'])->min(2)->max(45);
         
 
 

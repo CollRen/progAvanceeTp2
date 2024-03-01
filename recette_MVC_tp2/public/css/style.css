@@ -115,7 +115,6 @@ footer {
     color: var(--main-txt-color);
     text-align: center;
     padding: var(--space-ml);
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
